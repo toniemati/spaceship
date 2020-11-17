@@ -80,6 +80,7 @@ body{
 }
 
 .spaceship{
+    position: fixed;
     width: var(--size-unit);
     height: var(--size-unit);
     background-image: url(../images/ship.png);
@@ -104,21 +105,22 @@ body{
     width: var(--size-unit);
     height: var(--size-unit);
     background-image: url(../images/explosion.png);
-    animation: move-17-untis-X var(--explosion-animation-time) steps(17) infinite;
+    animation: move-17-untis-X var(--explosion-animation-time) steps(17) forwards;
 }
 
 .explosion--big{
     width: calc(var(--size-unit)*2);
     height: calc(var(--size-unit)*2);
     background-image: url(../images/explosion-big.png);
-    animation: move-34-untis-X var(--explosion-animation-time) steps(17) infinite;
+    animation: move-34-untis-X var(--explosion-animation-time) steps(17) forwards;
 }
 
-.missle{
+.missile{
     background-image: url(../images/missile.png);
     background-size: cover;
     width: 12px;
     height: 24px;
+    position: fixed;
 }
 
 @keyframes move-8-untis-X{
