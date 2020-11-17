@@ -2,7 +2,7 @@ import { Missile } from './Missile.js';
 
 export class Spaceship {
     missiles = [];
-    #speed = 5;
+    #speed = 10;
     #leftArrow = false;
     #rightArrow = false;
 
@@ -12,12 +12,12 @@ export class Spaceship {
     }
 
     init() {
-        this.#setPossition();
+        this.setPossition();
         this.#eventListeners();
         this.#gameLoop();
     }
 
-    #setPossition() {
+    setPossition() {
         this.element.style.bottom = '0px';
         this.element.style.left =
             `${window.innerWidth / 2
@@ -62,11 +62,11 @@ export class Spaceship {
     }
 
     #whitchKey() {
-        if (this.#leftArrow && this.#getPosition() > 0) {
+        if (this.#leftArrow && this.#getPosition() > 10) {
             this.element.style.left = `${parseInt(this.element.style.left, 10) - this.#speed}px`;
         }
 
-        if (this.#rightArrow && this.#getPosition() < window.innerWidth) {
+        if (this.#rightArrow && this.#getPosition() + 12 < window.innerWidth) {
             this.element.style.left = `${parseInt(this.element.style.left, 10) + this.#speed}px`;
         }
     }
